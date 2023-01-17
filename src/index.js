@@ -47,7 +47,7 @@ function updateServerTicketsLeft(){
   let y=ticketNumber.dataset.id-ticketNumber.textContent
   console.log(movieTitle.dataset.id)
   
-  fetch(`http://localhost:3000/films/${movieTitle.dataset.id}`,{
+  fetch(`https://my-json-server.typicode.com/ayoraowen/flatdango-code-challenge/films/${movieTitle.dataset.id}`,{
     method:'PATCH',
     headers:{
       'Content-Type': 'application/json'
@@ -82,7 +82,7 @@ function initialize() {
 }
 
 function getFirstFilmData(id=1){
-  fetch(`http://localhost:3000/films/${id}`)
+  fetch(`https://my-json-server.typicode.com/ayoraowen/flatdango-code-challenge/films/${id}`)
   .then(res => res.json())
   .then(firstFilmData => {
     renderFirstFilm(firstFilmData)
@@ -90,7 +90,7 @@ function getFirstFilmData(id=1){
 }
 
 function getAllFilmData(){
-    fetch('http://localhost:3000/films')
+    fetch('https://my-json-server.typicode.com/ayoraowen/flatdango-code-challenge/films')
     .then(res => res.json())
     .then(filmData => {
       const filmArrayList=filmData.map(films => films.title)
